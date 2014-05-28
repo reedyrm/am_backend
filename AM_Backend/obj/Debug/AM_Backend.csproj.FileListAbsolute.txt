@@ -1,0 +1,5 @@
+c:\users\gianni\documents\visual studio 2012\Projects\AM_Backend\AM_Backend\bin\AM_Backend.dll
+c:\users\gianni\documents\visual studio 2012\Projects\AM_Backend\AM_Backend\bin\AM_Backend.pdb
+c:\users\gianni\documents\visual studio 2012\Projects\AM_Backend\AM_Backend\obj\Debug\AM_Backend.csprojResolveAssemblyReference.cache
+c:\users\gianni\documents\visual studio 2012\Projects\AM_Backend\AM_Backend\obj\Debug\AM_Backend.dll
+c:\users\gianni\documents\visual studio 2012\Projects\AM_Backend\AM_Backend\obj\Debug\AM_Backend.pdb
