@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AM_Backend.AuthService" CodeBehind="AuthRestService.svc.cs" %>
