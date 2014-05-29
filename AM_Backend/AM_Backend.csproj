@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -59,24 +60,20 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DB.sdf" />
     <Content Include="AuthService\AuthService.svc" />
-    <Content Include="AuthService\AuthRestService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthService\AuthRestService.svc.cs">
-      <DependentUpon>AuthRestService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="AuthService\IAuthRestService.cs" />
     <Compile Include="AuthService\AuthService.svc.cs">
       <DependentUpon>AuthService.svc</DependentUpon>
     </Compile>
     <Compile Include="AuthService\IAuthService.cs" />
+    <Compile Include="DataService\UserDataService.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

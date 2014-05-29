@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using AM_Backend.Models;
 
 namespace AM_Backend
 {
@@ -13,7 +14,23 @@ namespace AM_Backend
     {
         [OperationContract]
         [WebInvoke(Method = "POST",
-           BodyStyle = WebMessageBodyStyle.Wrapped,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest,
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json,
+           UriTemplate = "user")]
+        User CreateUser(string username, string password);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+           BodyStyle = WebMessageBodyStyle.WrappedRequest,
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json,
+           UriTemplate = "user/{username}")]
+        User GetUser(string username);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           BodyStyle = WebMessageBodyStyle.WrappedRequest,
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json,
            UriTemplate = "login")]
@@ -21,7 +38,7 @@ namespace AM_Backend
 
         [OperationContract]
         [WebInvoke(Method = "POST",
-           BodyStyle = WebMessageBodyStyle.Wrapped,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest,
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json,
            UriTemplate = "changepassword")]
@@ -31,10 +48,10 @@ namespace AM_Backend
     [DataContract]
     public class AuthObject
     {
-        [DataMember]
+        [DataMember(Name = "success")]
         public bool Success { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
     }
 }
